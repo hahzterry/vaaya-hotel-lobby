@@ -1,0 +1,55 @@
+{
+  "name": "n8n-nodes-vaaya-hotel-lobby",
+  "version": "0.1.0",
+  "description": "n8n community node for the Vaaya Hotel Lobby recipe: put yourself (or you and a friend) into the viral Hotel Lobby performance video, generated with MiniMax H3 on fal.ai using your own fal API key.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "vaaya",
+    "hotel-lobby",
+    "minimax",
+    "fal",
+    "video-generation"
+  ],
+  "license": "MIT",
+  "homepage": "https://vaaya.ai/recipes/colors",
+  "author": {
+    "name": "Vaaya",
+    "email": "support@vaaya.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaruPelkar/n8n-nodes-vaaya-hotel-lobby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MaruPelkar/n8n-nodes-vaaya-hotel-lobby/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').copyFileSync('nodes/HotelLobby/hotelLobby.svg','dist/nodes/HotelLobby/hotelLobby.svg')\"",
+    "prepublishOnly": "pnpm build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/FalApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/HotelLobby/HotelLobby.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6",
+    "n8n-workflow": "^1.70.0",
+    "typescript": "^5.6.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
